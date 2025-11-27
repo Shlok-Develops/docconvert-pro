@@ -1,0 +1,41 @@
+.format-selector {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.format-selector label {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+.format-selector select {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.format-selector select:hover:not(:disabled) {
+  border-color: #667eea;
+}
+
+.format-selector select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.format-selector select:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}

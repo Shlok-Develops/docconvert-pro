@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: docconvert-pro
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+    disk:
+      name: docconvert-storage
+      mountPath: /opt/render/project/src/uploads
+      sizeGB: 1

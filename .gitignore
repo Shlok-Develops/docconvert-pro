@@ -1,0 +1,7 @@
+node_modules/
+uploads/
+converted/
+.env
+dist/
+client/dist/
+*.log
