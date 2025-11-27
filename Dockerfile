@@ -26,6 +26,9 @@ RUN npm run build
 # Create necessary directories
 RUN mkdir -p uploads converted
 
+# Set environment to production
+ENV NODE_ENV=production
+
 EXPOSE 3001
 
 CMD ["npm", "start"]

@@ -27,7 +27,12 @@ const initDirs = async () => {
   }
 };
 
-// Routes
+// Serve static files in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/dist')));
+}
+
+// API Routes
 app.use('/api/upload', uploadRoutes);
 app.use('/api/convert', convertRoutes);
 app.use('/api/download', downloadRoutes);
@@ -37,10 +42,8 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-// Serve static files in production
+// Serve index.html for all other routes in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/dist')));
-  
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist/index.html'));
   });
